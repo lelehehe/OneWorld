@@ -1,0 +1,145 @@
+<project info="SuiteCloud IDE generated file, do not edit." setAttributesOnUpdate="false">
+  <folder name="OneWorld-CheckoutCus" bundleable="false">
+    <folder name="js" bundleable="false">
+      <folder name="src" bundleable="false">
+        <folder name="app" bundleable="false">
+          <file name="Configuration.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        </folder>
+        <folder name="core" bundleable="false">
+          <folder name="extras" bundleable="false" exclude="false">
+            <file name="ApplicationSkeleton.Layout.showContent.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="ApplicationSkeleton.Layout.showInModal.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="ApplicationSkeleton.Tracking.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.Model.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.Sync.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.Validation.callbacks.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.View.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.View.render.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.View.saveForm.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.View.toggleReset.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Backbone.cachedSync.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="String.format.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="Underscore.templates.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="jQuery.ajaxSetup.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="jQuery.serializeObject.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          </folder>
+          <file name="ApplicationSkeleton.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="Main.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="Utils.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        </folder>
+      </folder>
+      <file name="Application-014de6b04d3b.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    </folder>
+    <folder name="skins" bundleable="false">
+      <folder name="standard" bundleable="false">
+        <folder name="bootstrap" bundleable="false">
+          <file name="accordion.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="alerts.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="breadcrumbs.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="button-groups.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="buttons.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="carousel.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="close.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="code.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="component-animations.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="dropdowns.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="forms.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="grid.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="hero-unit.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="labels-badges.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="layouts.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="media.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="mixins.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="modals.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="navbar.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="navs.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="pager.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="pagination.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="popovers.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="progress-bars.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="reset.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="responsive-1200px-min.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="responsive-767px-max.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="responsive-768px-979px.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="responsive-navbar.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="responsive-utilities.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="scaffolding.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="sprites.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="tables.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="thumbnails.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="tooltip.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="type.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="utilities.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="variables.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="wells.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        </folder>
+        <folder name="site" bundleable="false">
+          <folder name="checkout" bundleable="false" exclude="false">
+            <file name="billing-module.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="cart-summary.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="confirmation.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="creditcards.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="delivery-method.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="gift-certificates.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="login-register.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="multishipto.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="order-wizard-layout.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="wizard-step-navigation.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          </folder>
+          <folder name="item-list" bundleable="false" exclude="false">
+            <file name="facet-browse.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="facet-header.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="faceted-nav.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="item-cell.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            <file name="item-list-navigable.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          </folder>
+          <file name="accordion-icons.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="address.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="back-to-top.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="base.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="breadcrumbs.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="footer.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="form-tweeks.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="header.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="headings.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="home.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="iframe.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="image-gallery.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="item-details.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="mini-cart.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="modals-hacks.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="navbar-tweeks.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="rating.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="reviews.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="shopping-cart.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="slider.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="text.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="tiles.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="variables.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="wells.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        </folder>
+        <file name="Styles-014ddc980ef1.css" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="current-css.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="styles.css" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="styles.less" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      </folder>
+    </folder>
+    <folder name="templates" bundleable="false">
+      <folder name="item_details" bundleable="false">
+        <folder name="macros" bundleable="false">
+          <file name="item_details_option_tile_macro.txt" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8">
+            <altTagCaption>macro</altTagCaption>
+          </file>
+        </folder>
+      </folder>
+      <file name="Templates-014ddc97f520.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="templates.config" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    </folder>
+    <file name="cart.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="index.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+  </folder>
+</project>

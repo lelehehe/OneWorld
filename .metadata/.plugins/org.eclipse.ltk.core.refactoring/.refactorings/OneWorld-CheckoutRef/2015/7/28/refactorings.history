@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements(s) to &apos;standard&apos;&#x0A;- Original project: &apos;OneWorld-CheckoutRef&apos;&#x0A;- Destination element: &apos;standard&apos;&#x0A;- Original elements:&#x0A;     styles.less&#x0A;     styles.css&#x0A;     bootstrap&#x0A;     site" description="Copy elements" element1="skins/standard/styles.less" element2="skins/standard/styles.css" element3="skins/standard/bootstrap" element4="skins/standard/site" files="2" flags="589830" folders="2" id="org.eclipse.wst.jsdt.ui.copy" log="skins/standard/styles.less&#x09;true&#x09;false&#x0A;skins/standard/bootstrap&#x09;true&#x09;false&#x0A;skins/standard/site&#x09;true&#x09;false&#x0A;skins/standard/styles.css&#x09;true&#x09;false" policy="org.eclipse.wst.jsdt.ui.copyResources" stamp="1436217527977" target="/OneWorld-CheckoutCus/skins/standard" units="0" version="1.0"/>
+</session>

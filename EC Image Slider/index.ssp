@@ -1,0 +1,14 @@
+var head = document.getElementsByTagName("head")[0];
+
+loadScript([
+	'/SCA-Quick-Start/EC-Image-Slider/js/libs/Libraries-014d201f5396.js'
+,	'/SCA-Quick-Start/EC-Image-Slider/templates/Templates-014e31d408e1.js'
+,	'/SCA-Quick-Start/EC-Image-Slider/js/Application-014d786daa37.js'
+]);
+
+var link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/SCA-Quick-Start/EC-Image-Slider/skins/Styles-014d06b48605.css';
+
+head.appendChild(link);
+

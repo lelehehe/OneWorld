@@ -1,0 +1,1 @@
+BDQ.currentTemplatesUrl = '/Web Site Hosting Files/Live Hosting Files/SCA-Quick-Start/EC-Image-Slider/templates/Templates-014e69d16873.js';

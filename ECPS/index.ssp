@@ -1,0 +1,14 @@
+var head = document.getElementsByTagName("head")[0];
+
+loadScript([
+	'/OneWorld-Mike/ECPS-SSP/js/libs/Libraries-014d201f5396.js'
+,	'/OneWorld-Mike/ECPS-SSP/templates/Templates-014e69d16873.js'
+,	'/OneWorld-Mike/ECPS-SSP/js/Application-014d786daa37.js'
+]);
+
+var link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/OneWorld-Mike/ECPS-SSP/skins/Styles-014d06b48605.css';
+
+head.appendChild(link);
+

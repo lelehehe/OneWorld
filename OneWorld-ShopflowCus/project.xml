@@ -1,0 +1,43 @@
+<project info="SuiteCloud IDE generated file, do not edit." setAttributesOnUpdate="false">
+  <folder name="OneWorld-ShopflowCus" bundleable="true">
+    <folder name="js" bundleable="false">
+      <folder name="libs" bundleable="false">
+        <file name="Libraries-014e0d75d862.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      </folder>
+      <file name="Application-014e0d753118.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="Application-014e26b82dc2.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="Configuration.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="Libraries-014e0d75d862.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+      <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    </folder>
+    <folder name="skins" bundleable="false">
+      <folder name="standard" bundleable="false">
+        <file name="Styles-014e0d762e06.css" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+        <file name="current-css.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      </folder>
+    </folder>
+    <folder name="templates" bundleable="false">
+      <folder name="home" bundleable="false">
+        <file name="home.txt" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8">
+          <altTagCaption>home_tmpl</altTagCaption>
+        </file>
+      </folder>
+      <file name="Templates-014e0d765fe1.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="templates.config" bundleable="false" hideInBundle="false" isOnline="false" textFileEncoding="_utf8"/>
+    </folder>
+    <file name="README.txt" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="current_config.json" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="global_config.json" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="goToCart.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="index.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="logOut.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="robots.txt" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="sc.environment.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    <file name="sc.user.environment.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+  </folder>
+</project>

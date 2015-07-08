@@ -1,0 +1,63 @@
+<project info="SuiteCloud IDE generated file, do not edit." setAttributesOnUpdate="false">
+  <folder name="ECPS" bundleable="false">
+    <folder name="js" bundleable="false">
+      <folder name="libs" bundleable="false">
+        <folder name="owl.carousel.2" bundleable="false">
+          <file name="owl.carousel.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+          <file name="owl.carousel.min.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        </folder>
+        <file name="Libraries-014d201f5396.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      </folder>
+      <folder name="src" bundleable="false">
+        <folder name="app" bundleable="false">
+          <folder name="modules" bundleable="false">
+            <folder name="ECSlider" bundleable="false">
+              <file name="ECSlider.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            </folder>
+            <folder name="Home" bundleable="false">
+              <file name="ECHomepage.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            </folder>
+            <folder name="OwlCarousel" bundleable="false">
+              <file name="OwlCarousel.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+            </folder>
+          </folder>
+        </folder>
+      </folder>
+      <file name="Application-014d786daa37.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="Starter.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    </folder>
+    <folder name="services" bundleable="false">
+      <file name="ecqsGetSlider.ss" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    </folder>
+    <folder name="skins" bundleable="false">
+      <folder name="owl.carousel.2" bundleable="false">
+        <file name="owl.carousel.css" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+        <file name="owl.theme.default.min.css" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      </folder>
+      <file name="Styles-014d06b48605.css" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="combiner.config" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="current-css.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="global.css" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    </folder>
+    <folder name="templates" bundleable="false">
+      <folder name="home" bundleable="false">
+        <folder name="macros" bundleable="false">
+          <file name="slider_img_macro.txt" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8">
+            <altTagCaption>macro</altTagCaption>
+          </file>
+        </folder>
+        <file name="home_alt.txt" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8">
+          <altTagCaption>EC_home_tmpl</altTagCaption>
+        </file>
+      </folder>
+      <file name="Templates-014e69d16873.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="current.js" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+      <file name="templates.config" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+    </folder>
+    <file name="index.ssp" bundleable="false" hideInBundle="false" isOnline="true" textFileEncoding="_utf8"/>
+  </folder>
+</project>
