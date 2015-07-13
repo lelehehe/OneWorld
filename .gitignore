@@ -1,1 +1,7 @@
-version.ini
+.metadata/
+.idea/
+Get Stores/.project
+Get Stores/project.xml
+Get Stores/.settings/.jsdtscope
+Get Stores/.settings/org.eclipse.wst.jsdt.ui.superType.container
+Get Stores/.settings/org.eclipse.wst.jsdt.ui.superType.name
