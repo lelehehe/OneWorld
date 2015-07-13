@@ -14,7 +14,7 @@ define('ECStoreLocatorData', function()
 		
 		initialize: function(options) {
 
-	    	this.id = options.id;
+	    	//this.id = options.id;
 	  	}
 
 	,	url: function() {			

@@ -1,0 +1,24 @@
+<% registerMacro('storeList', function (stores) {
+%>
+
+<% if (stores.length === 0) { %>
+    <div class="well">
+        <h2 class="warning">No item for this area!</h2>
+    </div>
+<% } else { %>
+    <div id="results_list">
+        <% _.each(stores, function(store, index) {
+        %>
+        <div class="col-xs-6 col-sm-3 col-xs-4">
+
+            <a href="javascript:myClick(0)">
+                <span class="resultTitle"><%= index + 1 %>. <%= store.get('custrecord_name') %></span></a>
+            <p class="resultCellText"><%= store.get('custrecord_city') %>, <%= store.get('custrecord_stateText') %><br><span><%= store.get('custrecord_phone') %></span><br>
+            </p>
+
+        </div>
+        <% }) %>
+    </div>
+<% }%>
+
+<% }) %>

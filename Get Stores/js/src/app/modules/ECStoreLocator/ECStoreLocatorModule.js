@@ -31,8 +31,13 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData'], function (ECStoreLocatorD
 	,	buildStoreLocator: function()
 		{
 			var self = this;
+			var collection = new ECStoreLocatorData.Collection();
+			collection.fetch({
+				success: function() {
+					self.$target.append(SC.macros.storeLocator(collection.models));
+				}
+			});
 
-			self.$target.append(SC.macros.storeLocator());
 
 			//todo: why code here doesn't work
 			//var Layout = SC.Application('Shopping').getLayout();
