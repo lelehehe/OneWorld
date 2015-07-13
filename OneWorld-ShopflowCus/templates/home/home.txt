@@ -1,7 +1,7 @@
 <section>
 	<h1><%= view.page_header %></h1>
 
-	<div data-type="ec-slider" data-ecps-slider="mikeGoodLookingSlider"></div>
+	<div data-type="ecps-slider" data-ecps-slider="mikeGoodLookingSlider"></div>
 
 
 	<h2>Demo for using Bootstrap grid v3</h2>

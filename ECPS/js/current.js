@@ -1,1 +1,1 @@
-BDQ.currentTemplatesUrl = '/Web Site Hosting Files/Live Hosting Files/SCA-Quick-Start/EC-Image-Slider/js/Application-014d786daa37.js';
+BDQ.currentTemplatesUrl = '/Web Site Hosting Files/Live Hosting Files/OneWorld-Mike/ECPS-SSP/js/Application-014d786daa37.js';

@@ -18,7 +18,7 @@ define('ECSlider', function()
 	  	}
 
 	,	url: function() {			
-			return '../SCA-Quick-Start/EC-Image-Slider/services/ecqsGetSlider.ss?name=' + this.id
+			return '../OneWorld-Mike/ECPS-SSP/services/ecqsGetSlider.ss?name=' + this.id
 		}
 	
 	,	model: ECSlider.Model

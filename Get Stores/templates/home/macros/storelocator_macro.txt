@@ -1,0 +1,82 @@
+<% registerMacro('storeLocator', function () {
+ %>
+
+<div id="container" class="grid-container-fluid">
+    <div class="row">
+        <div id="map_section" class="col-sm-8" style="overflow: hidden;">
+
+            <!-- map -->
+            <div id="online_search_image" style=""><img class="alignnone size-full wp-image-2883" src="http://www.coolasuncare.com/wordpress/wp-content/uploads/2015/04/store-locator-online.jpg" alt="store-locator-online" width="930" height="450"></div>
+        </div>
+        <!--ENDING MAP SECTION DIV-->
+        <div class="col-sm-4">
+            <div id="navigationBar"><label id="findDealerIcon">FIND A STORE</label>
+                <a id="usa_canada_nav_select" href=""></a>UNITED STATES
+                <a id="international_nav_select" href=""></a>INTERNATIONAL
+                <a id="online_nav_select" href=""></a>ONLINE
+                <div id="controls">
+                    <div id="usa_canada_controls">
+                        <div id="search_area"><label>Address, City/State or Zip:</label><input id="search_input" type="text"></div>
+                        <div id="radius_search" style="margin-top: 8px;"><label>Distance:</label><select id="radius">
+                            <option selected="selected" value="5">5 miles</option>
+                            <option value="10">10 miles</option>
+                            <option value="25">25 miles</option>
+                            <option value="50">50 miles</option>
+                            <option value="100">100 miles</option>
+                        </select></div>
+                        <div id="submit_button">
+                            <button type="button" class="btn btn-primary" data-action="get-store-locations">SEARCH</button>
+                            <a href="#" data-action="get-store-locations">Get Store Locations</a>
+                            <img id="spinner" style="display: none; padding-left: 85px; visibility: hidden;" src="https://system.na1.netsuite.com/c.3951614/site/ec_store_locator/images/store-locator-loader.gif" alt="loading">
+                        </div>
+                    </div>
+                    <div id="international_controls" style="display: none;">
+                        <p id="country_search"><select id="country" style="width: 200px;" onchange="getResults();">
+                            <option selected="selected" value="">Select a Country</option>
+                            <option value="15">Aruba</option>
+                            <option value="31">Bahamas</option><!--
+<option value='106'>British West Indies</option>-->
+                            <option value="37">Canada</option><!--
+<option value=''>Dutch Caribbean</option>-->
+                            <option value="95">Hong Kong</option>
+                            <option value="102">Ireland</option>
+                            <option value="110">Italy</option>
+                            <option value="112">Jamaica</option><!--
+<option value=''>Kowloon</option>-->
+                            <option value="148">Macau</option>
+                            <option value="157">Mexico</option><!--
+<option value=''>New Territories</option>-->
+                            <option value="171">New Zealand</option><!--
+<option value=''>Ontario</option>-->
+                            <option value="182">Puerto Rico</option>
+                            <option value="197">Singapore</option>
+                            <option value="68">Spain</option>
+                            <option value="42">Switzerland</option>
+                            <option value="77">United Kingdom</option>
+                            <option value="237">US Virgin Islands</option>
+                        </select></p>
+
+                    </div>
+                    <div id="online_controls" style="display: none;">
+
+                        Select a store location name:
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--ENDING RESULTS DIV-->
+    </div>
+    <div class="row">
+        <div id="resultsDisplay" class="col-sm-8">
+
+            <!-- results -->
+            <div id="results_list"><div class="col-xs-6 col-sm-3 col-xs-4"><a href="javascript:myClick(0)"><span class="resultTitle">1. Julep Nail Parlor Bellevue</span></a><p class="resultCellText">Seattle, Washington<br><span>(877) 585-3703</span><br></p></div></div>
+        </div>
+    </div>
+    <!--ENDING CONTAINER DIV-->
+    <div id="scriptHolder"><script type="text/javascript" id="scriptId" src="https://forms.na1.netsuite.com/app/site/hosting/scriptlet.nl?script=61&amp;deploy=1&amp;compid=3951614&amp;h=86ea17b04a3884e4cdd6&amp;filters=[[&quot;isinactive&quot;,&quot;is&quot;,&quot;F&quot;],&quot;AND&quot;,[&quot;custrecord_latitude&quot;,&quot;between&quot;,47.48534879985527,47.63006660014471],&quot;AND&quot;,[&quot;custrecord_longitude&quot;,&quot;between&quot;,-122.23984815953342,-122.01564484046658]]&amp;timestamp=1436727223001"></script></div>
+    <div id="ajaxDivHolder"></div>
+</div>
+
+<% }) %>

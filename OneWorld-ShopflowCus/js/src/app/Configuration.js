@@ -136,7 +136,7 @@
 			}
 		]
 
-	,	footerNavigation: []
+	,	footerNavigation: [{text: 'Contact us', href:'/contact-us'}, {text: 'Link b', href:'#'}, {text: 'Link c', href:'#'}]
 
 		// Macro to be rendered in the header showing your name and nav links
 		// we provide be 'headerProfile' or 'headerSimpleProfile'

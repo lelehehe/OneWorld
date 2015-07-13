@@ -1,10 +1,10 @@
-define('ECHomepage', function()
+define('ECPSHomepage', function()
 {
 	'use strict';
 	
-	var ECHomepage = {};
+	var ECPSHomepage = {};
 	
-	ECHomepage.View = Backbone.View.extend({
+	ECPSHomepage.View = Backbone.View.extend({
 		title: 'Homepage'
 	,	page_header: 'Homepage'
 	,	template: 'EC_home'
@@ -15,9 +15,9 @@ define('ECHomepage', function()
 		}
 	});
 	
-	ECHomepage.Router = Backbone.Router.extend({
+	ECPSHomepage.Router = Backbone.Router.extend({
 		routes: {
-			'ecqs-slider-demo': 'customHomePage'
+			'ecps-slider-demo': 'customHomePage'
 		}
 		
 	,	initialize: function (application)
@@ -28,7 +28,7 @@ define('ECHomepage', function()
 	,	customHomePage: function()
 		{
 
-			var view = new ECHomepage.View({
+			var view = new ECPSHomepage.View({
 				application: this.application
 			});
 			
@@ -37,27 +37,27 @@ define('ECHomepage', function()
 		}
 	});
 	
-	ECHomepage.mountToApp = function(application)
+	ECPSHomepage.mountToApp = function(application)
 	{
 		
-		return new ECHomepage.Router(application);
+		return new ECPSHomepage.Router(application);
 		
 	};
 	
-	return ECHomepage;
+	return ECPSHomepage;
 });
 
 (function(application)
 {
-	application.Configuration.modules.push('ECHomepage');
+	application.Configuration.modules.push('ECPSHomepage');
 	
 	application.Configuration.navigationTabs.push({		
 		data: {		
-			hashtag: '#/ecqs-slider-demo'		
+			hashtag: '#/ecps-slider-demo'		
 		,	touchpoint: 'home'		
 		}		
-	,	href: 'ecqs-slider-demo'		
-	,	text: 'ECQS Slider Demo'		
+	,	href: 'ecps-slider-demo'		
+	,	text: 'ECPS Slider Demo'		
 	});
 	
 })(SC.Application('Shopping'));

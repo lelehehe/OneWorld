@@ -1,1 +1,1 @@
-BDQ.currentTemplatesUrl = '/Web Site Hosting Files/Live Hosting Files/SCA-Quick-Start/EC-Image-Slider/skins/Styles-014d06b48605.css';
+BDQ.currentTemplatesUrl = '/Web Site Hosting Files/Live Hosting Files/OneWorld-Mike/ECPS-SSP/skins/Styles-014d06b48605.css';

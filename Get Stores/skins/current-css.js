@@ -1,0 +1,1 @@
+BDQ.currentTemplatesUrl = '/Web Site Hosting Files/Live Hosting Files/EC-Store-Locator/skins/Styles-014e7ad6bd17.css';

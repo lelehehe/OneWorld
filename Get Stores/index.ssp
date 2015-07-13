@@ -1,0 +1,15 @@
+var head = document.getElementsByTagName("head")[0];
+
+loadScript([
+	'/EC-Store-Locator/js/libs/Libraries-014e71961918.js'
+,	'/EC-Store-Locator/templates/Templates-014e7ad662de.js'
+,	'/EC-Store-Locator/js/Application-014e7f0e448f.js'
+]);
+
+var link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/EC-Store-Locator/skins/Styles-014e7ad6bd17.css';
+
+
+head.appendChild(link);
+

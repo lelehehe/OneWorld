@@ -1,0 +1,5 @@
+<section class="homepage-banner">
+	<div class="row-fluid">
+		<div data-type="ec-storelocator" data-ec-storelocator="Anime"></div>
+	</div>
+</section>

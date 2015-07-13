@@ -211,6 +211,8 @@ if (!SC.isCrossOrigin())
 	SC.ENVIRONMENT.seoSupport = !!~document.body.className.indexOf("seo-support");
 
 	loadScript([ '/SCA-Quick-Start/EC-Image-Slider/index.ssp' ]);
+	loadScript([ '/EC-Store-Locator/index.ssp' ]);
+    //loadScript([ '/SCA-Quick-Start/EC-Image-Slider/index.ssp' ]);
 
 	/* load language and sc.environment.ssp */ 
 	loadScript([
@@ -226,9 +228,9 @@ if (!SC.isCrossOrigin())
 	// Loads the application files, if you need to have a less agresive cacheing you can move them 
 	// to the sc.environment.ssp (Moderate cacheing) or to the sc.user.environment.ssp (No cache but less performant)
 	loadScript([
-		'<%= session.getAbsoluteUrl("shopping", 'js/libs/Libraries-014e0d75d862.js') %>'
-	,	'<%= session.getAbsoluteUrl("shopping", 'templates/Templates-014e5765e488.js') %>'
-	,	'<%= session.getAbsoluteUrl("shopping", 'js/Application-014e56f4ba76.js') %>'
+		'<%= session.getAbsoluteUrl("shopping", 'js/libs/Libraries-014e7b8a833c.js') %>'
+	,	'<%= session.getAbsoluteUrl("shopping", 'templates/Templates-014e7b88d44e.js') %>'
+	,	'<%= session.getAbsoluteUrl("shopping", 'js/Application-014e7b8a20da.js') %>'
 	]);
 
 	if (SC.ENVIRONMENT.jsEnvironment == 'browser')
@@ -242,6 +244,6 @@ if (!SC.isCrossOrigin())
 
 </script>
 
-<link rel="stylesheet" href="<%= session.getAbsoluteUrl('shopping', 'skins/standard/Styles-014e56060d12.css') %>">
+<link rel="stylesheet" href="<%= session.getAbsoluteUrl('shopping', 'skins/standard/Styles-014e7b891632.css') %>">
 </body>
 </html>

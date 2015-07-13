@@ -5,6 +5,48 @@
   box-sizing: border-box;
 }
 
+.grid-container select,
+.grid-container textarea,
+.grid-container input,
+.grid-container input[type="text"],
+.grid-container input[type="password"],
+.grid-container input[type="datetime"],
+.grid-container input[type="datetime-local"],
+.grid-container input[type="date"],
+.grid-container input[type="month"],
+.grid-container input[type="time"],
+.grid-container input[type="week"],
+.grid-container input[type="number"],
+.grid-container input[type="email"],
+.grid-container input[type="url"],
+.grid-container input[type="search"],
+.grid-container input[type="tel"],
+.grid-container input[type="color"],
+.grid-container .uneditable-input
+{
+  height: 34px;
+}
+.grid-container-fluid select,
+.grid-container-fluid textarea,
+.grid-container-fluid input,
+.grid-container-fluid input[type="text"],
+.grid-container-fluid input[type="password"],
+.grid-container-fluid input[type="datetime"],
+.grid-container-fluid input[type="datetime-local"],
+.grid-container-fluid input[type="date"],
+.grid-container-fluid input[type="month"],
+.grid-container-fluid input[type="time"],
+.grid-container-fluid input[type="week"],
+.grid-container-fluid input[type="number"],
+.grid-container-fluid input[type="email"],
+.grid-container-fluid input[type="url"],
+.grid-container-fluid input[type="search"],
+.grid-container-fluid input[type="tel"],
+.grid-container-fluid input[type="color"],
+.grid-container-fluid .uneditable-input
+{
+  height: 34px;
+}
 
 .grid-container-fluid *:before,
 .grid-container-fluid *:after,

@@ -1,5 +1,4 @@
 <% registerMacro('sliderImg', function (item, imageLink) {
-	debugger
  %>
 
 <div class="item">
