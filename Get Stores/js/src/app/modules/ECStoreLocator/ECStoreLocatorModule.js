@@ -1,4 +1,4 @@
-define('ECStoreLocatorModule', ['ECStoreLocatorData'], function (ECStoreLocatorData)
+define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], function (ECStoreLocatorData, Views)
 {
 	'use strict';
 
@@ -22,11 +22,11 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData'], function (ECStoreLocatorD
 			return this;
 		}
 
-	,   getStoresEventHandler: function(e) {
-			e.preventDefault();
-			debugger
-			console.log("haha, we are in the searStoreEvent")
-		}
+	//,   getStoresEventHandler: function(e) {
+	//		e.preventDefault();
+	//		debugger
+	//		console.log("haha, we are in the searStoreEvent")
+	//	}
 
 	,	buildStoreLocator: function()
 		{
@@ -38,29 +38,28 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData'], function (ECStoreLocatorD
 				}
 			});
 
-
-			//todo: why code here doesn't work
-			//var Layout = SC.Application('Shopping').getLayout();
-			//_.extend(Layout.events, {
-			//	'click [data-action="get-store-locations"]': 'getStoresEventHandler'
-			//});
-            //
-			//_.extend(Layout, {
-			//	getStoresEventHandler: function(e) {
-			//		self.getStoresEventHandler(e);
-			//	}
-			//});
-
 		}
 	});
 
-	var ECStoreLocatorModule = {
+	// This object's methods are meant to be added to the layout
+	var LayoutEnhance = {
+		getStoresEventHandler: function(e) {
+			e.preventDefault();
+			debugger
+			console.log("haha, we are in the searStoreEvent")
+		}
+	};
 
-		ECStoreLocator: ECStoreLocator
+	var ECStoreLocatorModule = {
+		Views: Views
+	, 	Model: ECStoreLocatorData.Model
+	,   Collection: ECStoreLocatorData.Collection
+
+	,	ECStoreLocator: ECStoreLocator
+	,   LayoutEnhance: LayoutEnhance
 		
 	,	initialize: function (view)
 		{
-			var Layout = SC.Application('Shopping').getLayout();
 			var ecStoreLocatorSelector = '[data-type="ec-storelocator"]';
 
 			if (view.$(ecStoreLocatorSelector).length == 1) {
@@ -71,22 +70,41 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData'], function (ECStoreLocatorD
 				,	ecStoreLocatorID: ecStoreLocatorID
 				});
 
+				//todo: why code here doesn't work
+				//var Layout = SC.Application('Shopping').getLayout();
+				//_.extend(Layout.events, {
+				//	'click [data-action="get-store-locations"]': 'getStoresEventHandler'
+				//});
+                //
+				//_.extend(Layout, {
+				//	getStoresEventHandler: function(e) {
+				//		//self.getStoresEventHandler(e);
+				//		debugger
+				//	}
+				//});
+
 			}
 		}
-	,	mountToApp: function (application)
+	,	mountToApp: function (application, options)
 		{
 			application.getLayout().on('afterAppendView', this.initialize);
+			if (options && options.startRouter)
+			{
+				console.log("ecstoremodule.js startRouter");
+			}
 
-			var Layout = SC.Application('Shopping').getLayout();
+			var Layout = application.getLayout();
+			_.extend(Layout, LayoutEnhance);
 			_.extend(Layout.events, {
 				'click [data-action="get-store-locations"]': 'getStoresEventHandler'
 			});
 
-			_.extend(Layout, {
-				getStoresEventHandler: function(e) {
-					ECStoreLocator.getStoresEventHandler(e);
-				}
-			});
+            //
+			//_.extend(Layout, {
+			//	getStoresEventHandler: function(e) {
+			//		ECStoreLocator.getStoresEventHandler(e);
+			//	}
+			//});
 		}
 			
 	}
