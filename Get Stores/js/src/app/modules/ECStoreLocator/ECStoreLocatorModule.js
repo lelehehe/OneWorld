@@ -6,6 +6,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 	{
 		this.options = options;
 		this.$target = options.$target;
+		this.collection = null;
 		
 		this.initialize();
 	};
@@ -31,10 +32,10 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 	,	buildStoreLocator: function()
 		{
 			var self = this;
-			var collection = new ECStoreLocatorData.Collection();
-			collection.fetch({
+			this.collection = new ECStoreLocatorData.Collection();
+			this.collection.fetch({
 				success: function() {
-					self.$target.append(SC.macros.storeLocator(collection.models));
+					self.$target.append(SC.macros.storeLocator(self.collection.models));
 				}
 			});
 
@@ -45,8 +46,18 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 	var LayoutEnhance = {
 		getStoresEventHandler: function(e) {
 			e.preventDefault();
-			debugger
-			console.log("haha, we are in the searStoreEvent")
+			var view = this.currentView;
+			var collection = this.currentView.ecStoreLocatorModule.collection;
+
+			collection.latitude1--;
+			collection.latitude2++;
+			collection.longitude1--;
+			collection.longitude2++;
+			collection.fetch({
+				success: function() {
+					view.ecStoreLocatorModule.$target.replaceWith(SC.macros.storeLocator(collection.models));
+				}
+			});
 		}
 	};
 
