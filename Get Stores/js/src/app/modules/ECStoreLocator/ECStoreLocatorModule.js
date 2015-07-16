@@ -8,6 +8,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 		this.options = options;
 		this.$target = options.$target;
 		this.collection = null;
+		this.layoutEnhance = LayoutEnhance;
 		
 		this.initialize();
 	};
@@ -37,7 +38,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 			this.collection.fetch({
 				success: function() {
 					self.$target.append(SC.macros.storeLocator(self.collection.models));
-					LayoutEnhance.initialize();
+					self.layoutEnhance.initialize();
 
 				}
 			});
@@ -49,6 +50,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 	var LayoutEnhance = {
 		map: null,
 		geocoder: null,
+		v3GeoCoder: null,
 		markers: [],
 		responseNone: false,
 		searchString: "",
@@ -60,6 +62,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 		initialize: function() {
 			this.selectedNav = navOptions.usa;
 			this.geocoder = new google.maps.Geocoder();
+			this.v3GeoCoder = new google.maps.Geocoder();
 			this.infoWindow = new google.maps.InfoWindow();
 
 			var mapOptions = {
@@ -68,12 +71,13 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			this.map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
+			console.log("geocoder and this.map are created!!!")
 		},
 		getStoresEventHandler: function(e) {
 			e.preventDefault();
 			var view = this.currentView;
 			var collection = this.currentView.ecStoreLocatorModule.collection;
+			var that = view.ecStoreLocatorModule.layoutEnhance;
 
 			//get lat/long
 			var searchInput = view.$("#search_input").val();
@@ -88,32 +92,32 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 				holder.removeChild(holder.childNodes[x]);
 			}
 
-			this.getAddressLatLng(searchInput, holder);
+			that.getAddressLatLng(searchInput, holder);
 			collection.latitude1--;
 			collection.latitude2++;
 			collection.longitude1--;
 			collection.longitude2++;
 			collection.fetch({
 				success: function() {
-					view.ecStoreLocatorModule.$target.empty().append(SC.macros.storeLocator(collection.models));
+					//view.ecStoreLocatorModule.$target.empty().append(SC.macros.storeLocator(collection.models));
+					view.ecStoreLocatorModule.$target.find('#storeList').empty().append(SC.macros.storeList(collection.models));
 				}
 			});
 		},
 		// Takes in an address string parameter value. Will do a google api call to retrieve the lat lng given the address string.
 		// Once a match is found, parse that lat and lng value out, and pass it along to add that address to the page.
 		getAddressLatLng: function(addressString, holder) {
-			var v3GeoCoder = new google.maps.Geocoder();
 			var pointObj = {};
 
 			// Move the map zoom to the provided address
 			//if(selectedNav == navOptions.usa)
-				this.showAddress(addressString, $('#radius').val());
+				this.showAddress(addressString, jQuery('#radius').val());
 			//else if(selectedNav == navOptions.international)
 			//	this.showAddress($("#country option:selected").text(), 250);
 
 			// Uses the geocode function of the sourced Google V3 API library referenced onto the page.
 			// It uses the address parameter and on the callback function will gather the lat/lng values returned for that address
-			v3GeoCoder.geocode({ 'address': addressString },
+			this.v3GeoCoder.geocode({ 'address': addressString },
 				function (results, status) {
 					var lat = '';
 					var lng = '';
@@ -134,7 +138,8 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 				})
 		},
 		showAddress: function(address, radius) {
-			geocoder.geocode({ 'address': address },
+			var self = this;
+			this.geocoder.geocode({ 'address': address },
 				function (results, status) {
 					if(status == google.maps.GeocoderStatus.OK) {
 						var point = results[0].geometry.location;
@@ -154,8 +159,8 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 						else
 							zoom = 4;
 
-						map.setCenter(point, zoom);
-						map.setZoom(zoom);
+						self.map.setCenter(point, zoom);
+						self.map.setZoom(zoom);
 					}
 				});
 		}
