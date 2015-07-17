@@ -142,12 +142,84 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 					collection.fetch({
 						success: function() {
 							$target.find('#storeList').empty().append(SC.macros.storeList(self.collection.models));
+							//self.displayStores(self.collection.models);
+							_.each(self.collection.models, function(model, index){
+								var result = model.attributes;
+								var innerString = '';
+								if(self.selectedNav == navOptions.usa || self.selectedNav == navOptions.international) {
+									var lat = result.custrecord_latitude;
+									var lng = result.custrecord_longitude;
+
+									////////////////////////////////////////////////////////////////////////////////////////////////////////
+									//Plot Result Content///////////////////////////////////////////////////////////////////////////////////
+									////////////////////////////////////////////////////////////////////////////////////////////////////////
+									if(lat && lng){
+										var addressDisplayText = "<div class='marker-bubble'>";
+										if (result.custrecord_name != "")
+											addressDisplayText += "<b>" + result.custrecord_name + "</b><br />";
+
+										// City state logic////////////////////////////////////////////////
+										var city = result.custrecord_city;
+										var state = result.custrecord_stateText;
+										if(city != '')
+											addressDisplayText += city;
+										if(state != '')
+											addressDisplayText += (city  != '' ? ', ' : '') + state + "<br />";
+										else
+											addressDisplayText += "<br/>";
+										///////////////////////////////////////////////////////////////////
+
+										if (jQuery.trim(result.custrecord__phone))
+											addressDisplayText += result.custrecord_phone + "<br />";
+
+										addressDisplayText += "</div>";
+
+										self.addAddress(lat, lng, addressDisplayText);
+										setTimeout(function(){}, 400);
+									}
+									////////////////////////////////////////////////////////////////////////////////////////////////////////
+									////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+								}
+								else if(selectedNav == navOptions.online) {
+									if ($.trim(result.custrecord_name)) {
+										// Line counter is designed to handle formatting for the result content
+											innerString += "<span class='result_set onlineResult'>";
+
+										innerString += "<br /> <a class='onlineLinks' href=\"";
+
+										if ($.trim(result.custrecord_site_url))
+											innerString += result.custrecord_site_url.indexOf('http') == -1 ? 'http://' + result.custrecord_site_url : result.custrecord_site_url;
+
+										innerString += "\" target=\"_blank\">" + result.custrecord_name + "</a></span>";
+									}
+								}
+								// Append inner string value to the outer loop variable
+								//outerString += innerString;
+							});
+
 						}
 					});
 					// Perform search in NetSuite for store location records
 					//suiteletDataRequest(filters, holder);
 				})
 		},
+
+		addAddress: function (lat, lng, html) {
+			var markerOptions = {
+				'position': new google.maps.LatLng(lat, lng)
+			};
+			var marker = new google.maps.Marker(markerOptions);
+			google.maps.event.addListener(marker, "click", function ()
+			{
+				infoWindow.setContent(html);
+				infoWindow.open(this.map, marker);
+			});
+			marker.setMap(this.map);
+			this.markers.push(marker);
+		},
+
+
 
 		getFilters: function (lat, lng){
 			var filters = [];
