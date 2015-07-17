@@ -95,7 +95,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 			for (var x = 0; x < holder.childNodes.length; x++) {
 				holder.removeChild(holder.childNodes[x]);
 			}
-
+			that.removeAllMarkers();
 			that.getAddressLatLng(searchInput, holder, view.ecStoreLocatorModule.$target);
 			//collection.latitude1--;
 			//collection.latitude2++;
@@ -108,6 +108,14 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 			//	}
 			//});
 		},
+
+		removeAllMarkers: function() {
+			_.each(this.markers, function(marker){
+				marker.setMap(null);
+			});
+			this.markers = []
+		},
+
 		// Takes in an address string parameter value. Will do a google api call to retrieve the lat lng given the address string.
 		// Once a match is found, parse that lat and lng value out, and pass it along to add that address to the page.
 		getAddressLatLng: function(addressString, holder, $target) {
@@ -210,10 +218,11 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 				'position': new google.maps.LatLng(lat, lng)
 			};
 			var marker = new google.maps.Marker(markerOptions);
+			var self = this;
 			google.maps.event.addListener(marker, "click", function ()
 			{
-				infoWindow.setContent(html);
-				infoWindow.open(this.map, marker);
+				self.infoWindow.setContent(html);
+				self.infoWindow.open(self.map, marker);
 			});
 			marker.setMap(this.map);
 			this.markers.push(marker);
