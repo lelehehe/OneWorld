@@ -7,7 +7,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 	{
 		this.options = options;
 		this.$target = options.$target;
-		this.collection = null;
+		//this.collection = null;
 		this.layoutEnhance = LayoutEnhance;
 		
 		this.initialize();
@@ -33,15 +33,17 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 
 	,	buildStoreLocator: function()
 		{
-			var self = this;
-			this.collection = new ECStoreLocatorData.Collection();
-			this.collection.fetch({
-				success: function() {
-					self.$target.append(SC.macros.storeLocator(self.collection.models));
-					self.layoutEnhance.initialize();
-
-				}
-			});
+			//var self = this;
+			//this.collection = new ECStoreLocatorData.Collection();
+			//this.collection.fetch({
+			//	success: function() {
+			//		//self.$target.append(SC.macros.storeLocator(self.collection.models));
+			//		self.$target.append(SC.macros.storeLocator(null));
+			//		self.layoutEnhance.initialize();
+			//	}
+			//});
+			this.$target.append(SC.macros.storeLocator(null));
+			this.layoutEnhance.initialize();
 
 		}
 	});
@@ -58,6 +60,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 		resultData:  null,
 		selectedNav: '', // Used to determine which navigation area is selected
 		infoWindow: null,
+		collection: null,
 
 		initialize: function() {
 			this.selectedNav = navOptions.usa;
@@ -71,12 +74,13 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			this.map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+			this.collection = new ECStoreLocatorData.Collection();
 			console.log("geocoder and this.map are created!!!")
 		},
 		getStoresEventHandler: function(e) {
 			e.preventDefault();
 			var view = this.currentView;
-			var collection = this.currentView.ecStoreLocatorModule.collection;
+			//var collection = this.currentView.ecStoreLocatorModule.collection;
 			var that = view.ecStoreLocatorModule.layoutEnhance;
 
 			//get lat/long
@@ -92,21 +96,21 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 				holder.removeChild(holder.childNodes[x]);
 			}
 
-			that.getAddressLatLng(searchInput, holder);
-			collection.latitude1--;
-			collection.latitude2++;
-			collection.longitude1--;
-			collection.longitude2++;
-			collection.fetch({
-				success: function() {
-					//view.ecStoreLocatorModule.$target.empty().append(SC.macros.storeLocator(collection.models));
-					view.ecStoreLocatorModule.$target.find('#storeList').empty().append(SC.macros.storeList(collection.models));
-				}
-			});
+			that.getAddressLatLng(searchInput, holder, view.ecStoreLocatorModule.$target);
+			//collection.latitude1--;
+			//collection.latitude2++;
+			//collection.longitude1--;
+			//collection.longitude2++;
+			//collection.fetch({
+			//	success: function() {
+			//		//view.ecStoreLocatorModule.$target.empty().append(SC.macros.storeLocator(collection.models));
+			//		view.ecStoreLocatorModule.$target.find('#storeList').empty().append(SC.macros.storeList(collection.models));
+			//	}
+			//});
 		},
 		// Takes in an address string parameter value. Will do a google api call to retrieve the lat lng given the address string.
 		// Once a match is found, parse that lat and lng value out, and pass it along to add that address to the page.
-		getAddressLatLng: function(addressString, holder) {
+		getAddressLatLng: function(addressString, holder, $target) {
 			var pointObj = {};
 
 			// Move the map zoom to the provided address
@@ -117,6 +121,7 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 
 			// Uses the geocode function of the sourced Google V3 API library referenced onto the page.
 			// It uses the address parameter and on the callback function will gather the lat/lng values returned for that address
+			var self = this;
 			this.v3GeoCoder.geocode({ 'address': addressString },
 				function (results, status) {
 					var lat = '';
@@ -131,12 +136,81 @@ define('ECStoreLocatorModule', ['ECStoreLocatorData', 'ECStoreLocator.Views'], f
 					}
 
 					// Get search filters
-					//var filters = getFilters(lat, lng);
-
+					var filters = self.getFilters(lat, lng);
+					var collection = self.collection;
+					collection.setFilters(filters);
+					collection.fetch({
+						success: function() {
+							$target.find('#storeList').empty().append(SC.macros.storeList(self.collection.models));
+						}
+					});
 					// Perform search in NetSuite for store location records
 					//suiteletDataRequest(filters, holder);
 				})
 		},
+
+		getFilters: function (lat, lng){
+			var filters = [];
+
+			// Get form data
+			var radius = jQuery('#radius').val();
+			var countryId = document.getElementById('country').value;
+
+			// Default filter where inactive is false
+			filters.push(['isinactive', 'is', 'F']);
+
+			// Perform form validation based on the navigation option selected
+			if(this.selectedNav == navOptions.usa) {
+				var locationObj = getLatLngObj(lat, lng, radius);
+				if (radius) {
+					if (parseFloat(locationObj.northLat) <= parseFloat(locationObj.southLat))
+						filters.push('AND', ['custrecord_latitude', 'between', locationObj.northLat, locationObj.southLat]); //latitude filter
+					else
+						filters.push('AND', ['custrecord_latitude', 'between', locationObj.southLat, locationObj.northLat]); //latitude filter
+
+					if (parseFloat(locationObj.westLng) <= parseFloat(locationObj.eastLng))
+						filters.push('AND', ['custrecord_longitude', 'between', locationObj.westLng, locationObj.eastLng]); //longitude filter
+					else
+						filters.push('AND', ['custrecord_longitude', 'between', locationObj.eastLng, locationObj.westLng]); //longitude filter
+				}
+			}
+			else if(this.selectedNav == navOptions.international) {
+				filters.push('AND', ['custrecord_country', 'is', countryId]);
+			}
+			else if(this.selectedNav == navOptions.online) {
+				filters.push('AND', ['custrecord_online_location', 'is', 'T']);
+			}
+
+			return filters;
+			function getLatLngObj(lat,lng, radius){
+				var locationObj = {centerLat:lat, centerLng:lng, northLat:0, southLat:0, westLng:0, eastLng:0};
+
+				locationObj.northLat = getNorthLat(locationObj.centerLat, radius);
+				locationObj.southLat = getSouthLat(locationObj.northLat, locationObj.centerLat);
+				locationObj.westLng = getWestLng(locationObj.centerLng , locationObj.centerLat, radius);
+				locationObj.eastLng = getEastLng(locationObj.centerLng , locationObj.westLng);
+
+				return locationObj;
+			}
+			//////////////////////////////////////////////////////////////////////////
+			//GET LAT/LNG POINTS//////////////////////////////////////////////////////
+			//////////////////////////////////////////////////////////////////////////
+			function getNorthLat(currlat, miles) {
+				return (parseInt(miles, 10) / 69.1) + parseFloat(currlat);
+			}
+			function getSouthLat(nlat, currlat) {
+				return parseFloat(currlat) - (nlat - parseFloat(currlat));
+			}
+			function getWestLng(currlng, currlat, miles) {
+				return (parseInt(miles, 10) / (69.1 * (Math.cos(((parseFloat(currlat) * Math.PI) / 180) * 60 / 57.3)))) + parseFloat(currlng);
+			}
+			function getEastLng(currlng, wlng) {
+				return parseFloat(currlng) - (wlng - parseFloat(currlng));
+			}
+			//////////////////////////////////////////////////////////////////////////
+			//////////////////////////////////////////////////////////////////////////
+		},
+
 		showAddress: function(address, radius) {
 			var self = this;
 			this.geocoder.geocode({ 'address': address },

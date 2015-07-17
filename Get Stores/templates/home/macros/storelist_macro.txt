@@ -2,7 +2,7 @@
 %>
 
 <div id="storeList">
-<% if (stores.length === 0) { %>
+<% if (!stores || stores.length === 0) { %>
     <div class="well">
         <h2 class="warning">No item for this area!</h2>
     </div>
